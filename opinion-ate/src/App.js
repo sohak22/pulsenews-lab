@@ -5,18 +5,18 @@ import React, { Component, useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+// const Counter = () => {
+//   const [counter, setCounter] = useState(0);
 
-  <TextField
-    id="standard-basic"
-    label="Standard"
-    variant="standard"
-    value = {counter}
-    onChange= {(e) => setCounter(e.target.value)}
-  />
+//   <TextField
+//     id="standard-basic"
+//     label="Standard"
+//     variant="standard"
+//     value = {counter}
+//     onChange= {(e) => setCounter(e.target.value)}
+//   />
 
-}
+// }
 
 function App() {
   return (
