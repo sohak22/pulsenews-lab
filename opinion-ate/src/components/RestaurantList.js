@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
-export default function RestaurantList({ loadRestaurants, restaurants }) {
+import { connect } from 'react-redux';
+import { loadRestaurants } from '../store/restaurants/actions';
+
+export function RestaurantList({ loadRestaurants, restaurants }) {
     useEffect(() => {
         loadRestaurants();
     }, [loadRestaurants]);
@@ -8,4 +11,12 @@ export default function RestaurantList({ loadRestaurants, restaurants }) {
             <li key={restaurant.id}>{restaurant.name}</li>
         ))} </ul>
     );
+
 };
+const mapStateToProps = state => ({
+    restaurants: state.restaurants.records,
+});
+
+const mapDispatchToProps = { loadRestaurants };
+
+export default connect(mapStateToProps, mapDispatchToProps)(RestaurantList);
